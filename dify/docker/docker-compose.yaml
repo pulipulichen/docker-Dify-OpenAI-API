@@ -945,19 +945,6 @@ services:
       timeout: 10s
       retries: 3
 
-  dify2openai:
-    image: funnyzak/dify2openai:0.0.2
-    # network_mode: bridge
-    ports:
-      - "13000:3000"
-    # restart: always
-    environment: 
-      - DIFY_API_URL=http://nginx/v1
-      # 看設定 Chat,Completion,Workflow
-      - BOT_TYPE=Chat
-      - MODEL_NAME=o1
-
-
   # unstructured .
   # (if used, you need to set ETL_TYPE to Unstructured in the api & worker service.)
   unstructured:

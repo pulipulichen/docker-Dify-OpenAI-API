@@ -4,25 +4,16 @@ full_path=$(realpath "$0")
 base_dir=$(dirname "$full_path")
 cd "$base_dir"
 
-git clean -f -d
-git fetch origin
-git reset --hard origin/main
+touch .env
 
-# ===========
+# ============
 
-cd "$base_dir"
-cd ./dify/docker
+./cloudflared.sh
 
-docker-compose down
-docker-compose up --build -d > /dev/null 2>&1 &
+# ============
 
-# ===========
+docker-compose --env-file ./default.env --env-file .env -f ./dify/docker/docker-compose.yaml -f ./dify2openai/docker-compose.yml down
+docker-compose --env-file ./default.env --env-file .env -f ./dify/docker/docker-compose.yaml -f ./dify2openai/docker-compose.yml up --build
 
-sleep 5
+# docker-compose --env-file ./default.env --env-file .env -f ./dify2openai/docker-compose.yml up --build
 
-echo $base_dir
-cd "$base_dir"
-# pwd
-cd ./dify2openai/
-
-./startup.sh

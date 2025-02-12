@@ -1,5 +1,4 @@
-# docker-Dify-OpenAI-API
-練習用
+# practice-Dify-OpenAI-API-20250212
 
 
-http://dify2openai:3000/
+

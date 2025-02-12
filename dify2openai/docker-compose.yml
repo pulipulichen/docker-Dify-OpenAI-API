@@ -1,13 +1,19 @@
+x-shared-env: &shared-api-worker-env
+  EXPOSE_NGINX_PORT: ${EXPOSE_NGINX_PORT:-80}
+  DIFY2OPENAI_EXPOSE_PORT: ${DIFY2OPENAI_EXPOSE_PORT:-8080}
+  DIFY2OPENAI_BOT_TYPE: ${DIFY2OPENAI_BOT_TYPE:-Chat}
+  DIFY2OPENAI_MODEL_NAME: ${DIFY2OPENAI_MODEL_NAME:-o1}
+
 version: '3.5'
 services:
   dify2openai:
     image: funnyzak/dify2openai:0.0.2
     # network_mode: bridge
     ports:
-      - "13000:3000"
+      - "${DIFY2OPENAI_EXPOSE_PORT:-8080}:3000"
     # restart: always
     environment: 
-      - DIFY_API_URL=http://127.0.0.1:38080/v1
+      - DIFY_API_URL=http://nginx/v1
       # 看設定 Chat,Completion,Workflow
-      - BOT_TYPE=Chat
-      - MODEL_NAME=o1
+      - BOT_TYPE=${DIFY2OPENAI_BOT_TYPE:-Chat}
+      - MODEL_NAME=${DIFY2OPENAI_MODEL_NAME:-o1}
