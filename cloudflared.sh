@@ -16,7 +16,7 @@ CLOUDFLARED_OUT="./.cloudflared.out"
 
 setupCloudflare() {
   if [ ! -f "$CLOUDFLARED_FILE" ]; then
-    wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -O "${file}"
+    wget -O "${CLOUDFLARED_FILE}" https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
     chmod a+x "${CLOUDFLARED_FILE}"
   fi
 }

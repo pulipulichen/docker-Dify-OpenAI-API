@@ -8,7 +8,7 @@ touch .env
 
 # ============
 
-./cloudflared.sh
+./cloudflared.sh &
 
 # ============
 
