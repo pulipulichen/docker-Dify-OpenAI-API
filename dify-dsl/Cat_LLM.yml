@@ -3,7 +3,7 @@ app:
   icon: 🤖
   icon_background: '#FFEAD5'
   mode: advanced-chat
-  name: Cat LLM
+  name: Cat_LLM
   use_icon_as_answer_icon: false
 kind: app
 version: 0.1.5
@@ -87,11 +87,11 @@ workflow:
       height: 54
       id: '1739208281904'
       position:
-        x: 80
-        y: 282
+        x: 30
+        y: 251.5
       positionAbsolute:
-        x: 80
-        y: 282
+        x: 30
+        y: 251.5
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -106,11 +106,11 @@ workflow:
       height: 103
       id: answer
       position:
-        x: 1108
-        y: 320
+        x: 638
+        y: 251.5
       positionAbsolute:
-        x: 1108
-        y: 320
+        x: 638
+        y: 251.5
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -132,16 +132,16 @@ workflow:
       height: 54
       id: '1739210251066'
       position:
-        x: 476
-        y: 94
+        x: 334
+        y: 251.5
       positionAbsolute:
-        x: 476
-        y: 94
+        x: 334
+        y: 251.5
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     viewport:
-      x: -284.3931077430352
-      y: 179.81268188492953
-      zoom: 0.7169776240079136
+      x: 0
+      y: 0
+      zoom: 0.7
